@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Current Date and Time</title>
+    <title>Email Form</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,12 +21,31 @@
         h1 {
             margin-bottom: 20px;
         }
+        label, input, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Current Date and Time</h1>
-        <p>The current date and time is: <%= new java.util.Date() %></p>
+        <h1>Enter Your Email</h1>
+        <form action="greet" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </body>
 </html>
